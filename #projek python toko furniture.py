@@ -1,6 +1,5 @@
-#projek python
 while True:
-    print("Apakah anda Pembeli atau Penjual ?")
+    print("Apakah anda Pembeli atau Penjual ?\nAtau Ingin keluar")
     openp = str(input())
     if openp in ["Pembeli","pembeli"]:  
         print("="*60)
@@ -10,17 +9,24 @@ while True:
         print("1.Melihat Tampilan Barang\n2.Mencari Barang\n3.Keluar Aplikasi")
         aksi_beli = int(input("=>"))
         if aksi_beli == 1:
-            with open ("deskripsi brng.txt",'r') as f:
-                baca_brng = f.readlines()
-                list_brng = [baca_brng[0],baca_brng[1],baca_brng[2]]
-                for a in baca_brng:
-                    print(f"Nama Perabotan\t: {list_brng[0]}")
-                    print(f"Harga Perabotan\t: {list_brng[1]}")
-                    print(f"Material\t: {list_brng[2]}")
-                    print("-"* 60)
+            with open ("deskripsiread.txt",'r') as f:
+                baca_brng=f.read()
+                print(baca_brng)
 
-        #elif aksi_beli == 2:
-            
+        elif aksi_beli == 2:
+            print('Tulis nomor dari aksi selanjutnya')
+            print('1.Melihat Harga Termurah\n2.Mencari Barang langsung(Search)')
+            aksi_cari = int(input('=>'))
+            if aksi_cari == 1:
+                with open('deskripsi_harga_sort',"r") as harga:
+                    harga1 = harga.readlines()
+                    harga1.reverse()
+                    print('berkut data harga barang dari yang murah')
+                    print("\nHarga,Nama Barang,Material\n")
+                    for x in harga1:
+                        print(f"{x}")
+
+
 
         elif aksi_beli == 3:
             break
@@ -37,15 +43,22 @@ while True:
         print("1.Menambah/ menjual barang\n2.Keluar Aplikasi")
         aksi_jual=int(input('=>'))
         if aksi_jual == 1:
+            f = open('deskripsiread.txt','a')
             nama_brng=str(input('masukkan nama barang = '))
             harga_brng=int(input('masukkan harga yang ngotak = '))
             material_brng=str(input('masukkan material barang = '))
-            deskrip_baru="{}${}${}".format(nama_brng,harga_brng,material_brng)
-            f = open('deskripsi brng.txt','a')
-            f.write("\n")
-            f.write(deskrip_baru)
-            print("Data tersimpan")
-            f.close
+            deskrip_read="\nNama Barang : {}\nHarga Barang : {}\nMaterial :{}\n".format(nama_brng,harga_brng,material_brng)
+            f.write("="*60)
+            f.write(deskrip_read)
+            f.close()
+
+            with open('deskripsi.txt','a') as file:
+                deskrip_baru="{},{},{},\n".format(nama_brng,harga_brng,material_brng)
+                file.write(deskrip_baru)
+                deskrip_harga_sort="{},{},{},\n".format(harga_brng,nama_brng,material_brng)
+                with open('deskripsi_harga_sort','a') as h:
+                    h.write(deskrip_harga_sort)
+                
             keluar2 = str(input("Apakah Anda Ingin Kembali Ke halaman Utama?(Ya/Tidak)  "))
             if keluar2 in ["Ya","ya","y"]:
                 print('data akan disimpan setelah keluar aplikasi')
@@ -54,10 +67,14 @@ while True:
                 print('data sudah dismpan')
                 break
         elif aksi_jual == 2:
-            print('no')
-        elif aksi_jual == 3:
-            pass
+            break
         else:
-            print('inputan salah,coba lagi')
+            print("inputan Error,Aplikasi akan ditutup")
+            break
     else :
-        print("Input Salah,Masukkan Jawaban dengan benar")
+        print("Apakah benar?(yes/no)")
+        keluarr = str(input("=>"))
+        if keluarr in ["yes"]:
+            break
+        else:
+            continue
