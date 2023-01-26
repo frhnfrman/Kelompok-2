@@ -1,0 +1,3 @@
+meja,50000,kayu,
+kursi,30000,kayu,
+lemari,100000,kayu,
