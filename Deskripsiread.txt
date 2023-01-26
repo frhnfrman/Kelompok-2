@@ -1,4 +1,24 @@
 ============================================================
-Nama Barang : Kertas
-Harga Barang : 200000
-Material : Kayu
+Nama Barang : popo
+Harga Barang : 987
+Material : telor
+============================================================
+Nama Barang : popo
+Harga Barang : 987
+Material : telor
+============================================================
+Nama Barang : popo
+Harga Barang : 987
+Material : telor
+============================================================
+Nama Barang : popo
+Harga Barang : 987
+Material : telor
+============================================================
+Nama Barang : popo
+Harga Barang : 987
+Material : telor
+============================================================
+Nama Barang : popo
+Harga Barang : 987
+Material : telor
