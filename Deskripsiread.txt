@@ -1,0 +1,4 @@
+============================================================
+Nama Barang : Kertas
+Harga Barang : 200000
+Material : Kayu
