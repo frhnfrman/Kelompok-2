@@ -1,6 +1,0 @@
-name = Sofa , price = 1500000 ,material = Kain
-name = Meja Makan , price = 500000 , material  = kayu
-name = Lemari , price = 1000000 , material = Kayu
-name = Kursi , price = 250000 , material = Plastik
-name = Tempat Tidur , price = 2000000 , material = Kayu
-name = kursibesi , harga = 20000 , material = besi
