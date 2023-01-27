@@ -73,7 +73,7 @@ while True:
         print("\tSelamat datang Penjual terhormat")
         print("="*60)
         print("tulis nomor dibawah ini untuk melakukan aksi")
-        print("1.Menambah/ menjual barang\n2.Keluar Aplikasi")
+        print("1.Menambah/ menjual barang\n2.Menghapus Barang tertentu\n3.Keluar Aplikasi")
         aksi_jual=int(input('=>'))
         
         
@@ -96,8 +96,58 @@ while True:
             else:
                 print('data sudah dismpan')
                 break
-        elif aksi_jual == 2:
+        
+        elif aksi_jual == 2:            #Menghapus data
+            with open('deskripsi.txt','r') as f:
+                baca_brng = f.readlines()
+                print('<<<<Berikut beberapa perabotan di dalam list>>>>')
+                print('-'*60)
+                print(f"|{'Nama Barang':16}|{'Harga Barang':20}|{'Material':15}|")
+                print('-'*60)
+                for a in baca_brng:
+                    a = a.split(',')
+                    print(f"|{a[0]:16}|{a[1]:20}|{a[2]:15}|")
+                print('-'*60)
+            pilih_no=int(input('Masukkan nomor barang yang akan di hapus\n=>')) - 1
+            print('Apakah anda ingin menghapus barang yang anda pilih?(ya/tidak)')
+            yakin=str(input('=>'))
+            if yakin not in ['ya','Ya','y','YA','Y']:
+                break
+            with open('deskripsi.txt','r') as f:
+                y=f.readlines()
+                del y[pilih_no]
+                y
+            with open('deskripsi.txt','w') as fi:
+                for x in y:
+                    x=x.split(',')
+                    a=x[0]
+                    b=x[1]
+                    c=x[2]
+                    z="{},{},{},\n".format(a,b,c)
+                    fi.write(z)
+            with open('deskripsi_harga_sort','r') as fii:
+                yy=fii.readlines()
+                del yy[pilih_no]
+                yy
+                with open('deskripsi_harga_sort','w') as fil:
+                    for k in yy:
+                        k=k.split(',')
+                        aa=k[0]
+                        bb=k[1]
+                        cc=k[2]
+                        v="{},{},{},\n".format(aa,bb,cc)
+                        fil.write(v)
+            print('data sudah terhapus')
+            keluar4 = str(input("\nApakah Anda Ingin Kembali Ke halaman Utama?(Ya/Tidak)\n=>  "))
+            if keluar4 not in ["Ya","ya","y",'Y','YA']:
+                print("Anda Telah keluar Aplikasi")
+                break
+            else:
+                continue
+
+        elif aksi_jual == 3:
             break
+        
         else:
             print("inputan Error,Aplikasi akan ditutup")
             break
@@ -108,4 +158,4 @@ while True:
             break
         else:
             continue
-#Kurang Searching,Deleting
+#Kurang Searching
