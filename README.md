@@ -1,5 +1,3 @@
-Nama Kelompok =
-
-ALDEVAN SETYA CAHYA SAPUTRA - 1102220026
-
-ACHMAD FARHAN FIRMANSYAH = 1102220025
+Anggota Kelompok :
+Aldevan Setya Cahya Saputra (1102220026)
+Achmad Farhan Firmansyah (1102220025)
