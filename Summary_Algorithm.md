@@ -1,3 +1,0 @@
-1. Mempelajari mengenai definisi dari algoritma, selanjutnya contoh dan karakteristik algoritma yang terdiri dari 3, dasar algoritma, pseudocode, dan flowchart.
-2. Selanjutnya mengenai flowchart yakni mempelajari mengenai simbol pada flowchart yang terdiri dari 5 simbol, dan cara menggunakan flowchart.
-3. Dan terakhir, pada flowchart dan algorithm diberik kesempatan cara penggunaannya melalui beberapa assignment/tes.
